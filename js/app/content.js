@@ -7,26 +7,52 @@ $("body").prepend("\
             <span class='wfit-header'>Style Inspector</span>\
             <span id='end-session' class='wfit-end-btn'>End</span>\
         </div>\
-        <div class='wfit-title'>Live Inspector</div>\
-        <div class='wfit-row'>\
-          <span class='wfit-label wfit-half'>Family</span>\
-          <span class='wfit-label wfit-half'>Size</span>\
-          <span id='font-family-holder' class='wfit-half'>Arial</span>\
-          <span id='font-size-holder' class='wfit-half'>14px</span>\
+        <div class='wfit-box'>\
+          <div class='wfit-title'>Live Inspector</div>\
+          <div class='wfit-row'>\
+            <span class='wfit-label wfit-half'>Family</span>\
+            <span class='wfit-label wfit-half'>Size</span>\
+            <span id='font-family-holder' class='wfit-half'>Arial</span>\
+            <span id='font-size-holder' class='wfit-half'>14px</span>\
+          </div>\
+          <div class='wfit-row'>\
+            <span class='wfit-label wfit-half'>Color</span>\
+            <span class='wfit-label wfit-half'>Background</span>\
+            <span class='wfit-half'>\
+              <span class='wfit-color-box wfit-boxes'>\
+                <span id='color-holder'>#dsada</span>\
+              </span>\
+            </span>\
+            <span class='wfit-half'>\
+              <span class='wfit-background-color-box wfit-boxes'>\
+                <span id='background-color-holder'>#dsada</span>\
+              </span>\
+            </span>\
+          </div>\
         </div>\
-        <div class='wfit-row'>\
-          <span class='wfit-label wfit-half'>Color</span>\
-          <span class='wfit-label wfit-half'>Background</span>\
-          <span class='wfit-half'>\
-            <span class='wfit-color-box wfit-boxes'>\
-              <span id='color-holder'>#dsada</span>\
-            </span>\
-          </span>\
-          <span class='wfit-half'>\
-            <span class='wfit-background-color-box wfit-boxes'>\
-              <span id='background-color-holder'>#dsada</span>\
-            </span>\
-          </span>\
+        <div class='wfit-box'>\
+          <div class='wfit-title'>Colors on this page</div>\
+          <div class='wfit-row wfit-color'>\
+            <span class='wfit-label wfit-half'>FONT COLORS</span>\
+            <span class='wfit-label wfit-half'>BG COLORS</span>\
+          </div>\
+          <hr>\
+          <div class='wfit-row wfit-row-scroll'>\
+            <div id='wfit-color-history'>\
+              <ul class='wfit-ul'></ul>\
+            </div>\
+          </div>\
+          <div class='wfit-row wfit-row-scroll'>\
+            <div id='wfit-background-history'>\
+              <ul class='wfit-ul'></ul>\
+            </div>\
+          </div>\
+        </div>\
+        <div class='wfit-box'>\
+          <div class='wfit-title'>Fonts on this page</div>\
+          <div id='wfit-font-history' class='wfit-row-scroll'>\
+            <ul class='wfit-ul'></ul>\
+          </div>\
         </div>\
         <div class='wfit-row'>\
           <span class='wfit-credits'>Designed and Developed by <a href='http://yassershaikh.com' target='_blank'>Yasser Shaikh</a></span>\
@@ -38,14 +64,10 @@ $("body").prepend("\
 var url = chrome.extension.getURL('icons/logo.png'); 
 console.log(url); 
 $(".wfit-logo img").attr("src", url); 
- 
+ /*
 $("body").prepend("\
   <div class='wfit-history'>\
     <span class='wfit-left-tab-header1'>Page History</span>\
-    <div id='wfit-font-history'>\
-      <span class='wfit-left-tab-header2'>Font used on this page:</span>\
-      <ul class='wfit-ul'></ul>\
-    </div>\
     <div id='wfit-color-history'>\
       <span class='wfit-left-tab-header2'>Font colors on this page:</span>\
       <ul class='wfit-ul'></ul>\
@@ -55,7 +77,7 @@ $("body").prepend("\
       <ul class='wfit-ul'></ul>\
     </div>\
   </div>\
-  "); 
+  "); */
  
 var fontHistory = []; 
 var fontcolorHistory = []; 
@@ -90,17 +112,17 @@ $('*').hover(function(e) {
     // left tab 
     if(fontHistory.indexOf(currentFont) == -1){ 
       fontHistory.push(currentFont); 
-      $(".wfit-history").find('#wfit-font-history ul').append("<li>" + currentFont + "</li>"); 
+      $(".wfit-wrapper").find('#wfit-font-history ul').append("<li>" + currentFont + "</li>"); 
     } 
  
     if(fontcolorHistory.indexOf(currentFontColor) == -1){ 
       fontcolorHistory.push(currentFontColor); 
-      $(".wfit-history").find('#wfit-color-history ul').append("<li>" + "<span class='wfit-boxes' style='background-color:"  + currentFontColor + ";'></span>"  + currentFontColor + "</li>"); 
+      $(".wfit-wrapper").find('#wfit-color-history ul').append("<li>" + "<span class='wfit-boxes' style='background-color:"  + currentFontColor + "; color:" + fontColor(currentBackgroundColor) + ";'>" + currentFontColor + "</span></li>"); 
     } 
  
     if(backgroundcolorHistory.indexOf(currentBackgroundColor) == -1){ 
       backgroundcolorHistory.push(currentBackgroundColor); 
-      $(".wfit-history").find('#wfit-background-history ul').append("<li>" + "<span class='wfit-boxes' style='background-color:"  + currentBackgroundColor + ";'></span>"  +  currentBackgroundColor + "</li>"); 
+      $(".wfit-wrapper").find('#wfit-background-history ul').append("<li>" + "<span class='wfit-boxes' style='background-color:"  + currentBackgroundColor + "; color:" + fontColor(currentBackgroundColor) + ";'>"  +  currentBackgroundColor + "</span></li>"); 
     } 
      
 }); 
