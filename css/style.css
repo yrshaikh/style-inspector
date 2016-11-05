@@ -29,6 +29,8 @@
 .wfit-boxes {padding-top: 0.8px;padding-bottom: 0.8px;padding-left: 10px;padding-right: 10px;border-width: 1px;border-style: solid;border-color: rgba(0,0,0,.2);margin-right: 5px;background-color: #fff;} 
  
 .wfit-container .wfit-row-scroll {max-height: 90px; overflow-y: scroll;}
+.wfit-container .wfit-row-scroll ul {padding-left: 0px;}
+.wfit-container .wfit-row-scroll ul li {width: 50%; float: left;}
 .wfit-credits {font-size: 12px;} 
  
 .wfit-ul {list-style: none;margin-left: 0px;} 
