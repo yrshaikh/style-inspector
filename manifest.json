@@ -1,0 +1,27 @@
+{
+	"background": { 
+      "scripts": [ "js/app/background.js" ] 
+   },
+   "browser_action": {
+      "default_icon": "icons/logo.png",
+      "default_popup": "popup.html",
+      "default_title": "Style Inspector"
+   },
+   "description": "Chrome plugin to identify colors and fonts used on websites and web pages",   
+   "manifest_version": 2,
+   "name": "Style Inspector",
+   "content_scripts": [
+    {
+      "css": [ "css/style.css" ],
+      "matches": [ "\u003Call_urls>" ],
+      "js": [ "js/lib/jquery.min.js" ]
+    }
+  ],
+   "icons": { 
+      "128": "icons/logo.png" 
+   },
+   "permissions": [ "tabs", "http://*/*", "https://*/*", "http://localhost.com/" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "1.0",
+   "web_accessible_resources": [ "css/style.css", "icons/logo.png" ]  
+}
