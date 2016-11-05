@@ -117,7 +117,7 @@ $('*').hover(function(e) {
  
     if(fontcolorHistory.indexOf(currentFontColor) == -1){ 
       fontcolorHistory.push(currentFontColor); 
-      $(".wfit-wrapper").find('#wfit-color-history ul').append("<li>" + "<span class='wfit-boxes' style='background-color:"  + currentFontColor + "; color:" + fontColor(currentBackgroundColor) + ";'>" + currentFontColor + "</span></li>"); 
+      $(".wfit-wrapper").find('#wfit-color-history ul').append("<li>" + "<span class='wfit-boxes' style='background-color:"  + currentFontColor + "; color:" + fontColor(currentFontColor) + ";'>" + currentFontColor + "</span></li>"); 
     } 
  
     if(backgroundcolorHistory.indexOf(currentBackgroundColor) == -1){ 

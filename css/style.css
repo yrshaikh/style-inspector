@@ -6,7 +6,7 @@
 .wfit-container:hover, .wfit-history:hover {opacity: 1;} 
 .wfit-container{right:5px;top: 0px; bottom: 0px;} 
 .wfit-history {left:5px;top: 50px;height: 85%; overflow: scroll;text-align: left;font-size: 14px;} 
-.wfit-container .wfit-box {background-color: #1B1C26; min-height: 150px; overflow-y: scroll; padding: 15px; margin-bottom: 15px;} 
+.wfit-container .wfit-box {background-color: #1B1C26; min-height: 150px; padding: 15px; margin-bottom: 15px;} 
  
 .wfit-title{text-transform: uppercase; text-align: left; padding-left: 10px; color: #6F6F90;}
 .wfit-half{width: 49%; float: left; color: #dedede;}
@@ -36,4 +36,6 @@
 .wfit-ul {list-style: none;margin-left: 0px;} 
 #wfit-font-history ul {padding-left: 0px; max-height: 90px; overflow-y: scroll;}
 #wfit-font-history ul li {text-align: left; padding-left: 10px; color: #dedede;}
+#wfit-color-history ul li, #wfit-background-history ul li {margin-bottom: 15px;}
 .wfit-box hr {margin-top: 25px; margin-left: -15px; margin-right: -15px;}
+.wfit-boxes{width: 80px; display: block;}
