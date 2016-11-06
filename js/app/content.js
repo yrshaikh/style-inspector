@@ -1,23 +1,23 @@
 $("body").prepend("\
-  <div class='wrap1'>\
-    <div class='wrap2'>\
-        <div class='head'>\
-          <span class='logo'><img src=''></span>\
-            <span class='title'>Style Inspector</span>\
-            <a class='close'>×</a>\
+  <div class='wfit-wrap1'>\
+    <div class='wfit-wrap2'>\
+        <div class='wfit-head'>\
+          <span class='wfit-logo'><img src=''></span>\
+            <span class='wfit-title'>Style Inspector</span>\
+            <a class='wfit-close'>×</a>\
         </div>\
-        <div class='main'>\
+        <div class='wfit-main'>\
 	        <div class='box'>\
-	          <div class='label big-label'>Live Inspector</div>\
+	          <div class='wfit-label wfit-big-label'>Live Inspector</div>\
 	          <div class='row paddingtop10'>\
-	            <span class='label small-label width50percent'>Family</span>\
-	            <span class='label small-label width50percent'>Size</span>\
-	            <span class='width50percent yellow'>Arial</span>\
-	            <span class='width50percent yellow'>14px</span>\
+	            <span class='wfit-label wfit-small-label width50percent'>Family</span>\
+	            <span class='wfit-label wfit-small-label width50percent'>Size</span>\
+	            <span class='width50percent wfit-font14 yellow'>Arial</span>\
+	            <span class='width50percent wfit-font14 yellow'>14px</span>\
 	          </div>\
 	          <div class='row paddingtop10'>\
-	            <span class='label small-label width50percent'>Color</span>\
-	            <span class='label small-label width50percent'>Background</span>\
+	            <span class='wfit-label wfit-small-label width50percent'>Color</span>\
+	            <span class='wfit-label wfit-small-label width50percent'>Background</span>\
 	            <span class='width50percent'>\
 	              <span class='colorbox wfit-boxes'>\
 	                <span id='color-holder'>#</span>\
@@ -31,10 +31,10 @@ $("body").prepend("\
 	          </div>\
 	        </div>\
 	        <div class='box row'>\
-	          <div class='label big-label'>Colors on this page</div>\
+	          <div class='wfit-label wfit-big-label'>Colors on this page</div>\
 	          <div class='wfit-row wfit-color'>\
-	            <span class='label small-label width50percent'>FONT COLORS</span>\
-	            <span class='label small-label width50percent'>BG COLORS</span>\
+	            <span class='wfit-label wfit-small-label width50percent'>FONT COLORS</span>\
+	            <span class='wfit-label wfit-small-label width50percent'>BG COLORS</span>\
 	          </div>\
 	          <div class='wfit-row wfit-row-scroll'>\
 	            <div id='wfit-color-history'>\
@@ -48,9 +48,9 @@ $("body").prepend("\
 	          </div>\
 	        </div>\
 	        <div class='box paddingtop10 row'>\
-	          <div class='title label big-label'>Fonts on this page</div>\
-	          <div id='wfit-font-history' class='wfit-row-scroll'>\
-	            <ul class='wfit-ul yellow'></ul>\
+	          <div class='title wfit-label wfit-big-label'>Fonts on this page</div>\
+	          <div id='wfit-font-history' class='wfit-row-scroll paddingtop10'>\
+	            <ul class='wfit-ul yellow wfit-font14'></ul>\
 	          </div>\
 	        </div>\
 	        <div class='footer'>\
@@ -65,14 +65,14 @@ $("body").prepend("\
 $('head').append('<link href="https://fonts.googleapis.com/css?family=Raleway|Titillium+Web" rel="stylesheet">')
 
 var url = chrome.extension.getURL('icons/logo.png'); 
-$(".logo img").attr("src", url); 
+$(".wfit-logo img").attr("src", url); 
  
 var fontHistory = []; 
 var fontcolorHistory = []; 
 var backgroundcolorHistory = []; 
  
-$(".close").click(function(){ 
-  $(".wrap1").remove(); 
+$(".wfit-close").click(function(){ 
+  $(".wfit-wrap1").remove(); 
   $(".wfit-history").remove(); 
 });
 
@@ -127,17 +127,17 @@ $('*').hover(function(e) {
     // bottom tab 
     if(fontHistory.indexOf(currentFont) == -1){ 
       fontHistory.push(currentFont); 
-      $(".wrap2").find('#wfit-font-history ul').append("<li>" + currentFont + "</li>"); 
+      $(".wfit-wrap2").find('#wfit-font-history ul').append("<li>" + currentFont + "</li>"); 
     } 
  
     if(fontcolorHistory.indexOf(currentFontColor) == -1){ 
       fontcolorHistory.push(currentFontColor); 
-      $(".wrap2").find('#wfit-color-history ul').append("<li>" + "<span class='wfit-boxes' style='background-color:"  + currentFontColor + "; color:" + fontColor(currentFontColor) + ";'>" + currentFontColor + "</span></li>"); 
+      $(".wfit-wrap2").find('#wfit-color-history ul').append("<li>" + "<span class='wfit-boxes' style='background-color:"  + currentFontColor + "; color:" + fontColor(currentFontColor) + ";'>" + currentFontColor + "</span></li>"); 
     } 
  
     if(backgroundcolorHistory.indexOf(currentBackgroundColor) == -1){ 
       backgroundcolorHistory.push(currentBackgroundColor); 
-      $(".wrap2").find('#wfit-background-history ul').append("<li>" + "<span class='wfit-boxes' style='background-color:"  + currentBackgroundColor + "; color:" + fontColor(currentBackgroundColor) + ";'>"  +  currentBackgroundColor + "</span></li>"); 
+      $(".wfit-wrap2").find('#wfit-background-history ul').append("<li>" + "<span class='wfit-boxes' style='background-color:"  + currentBackgroundColor + "; color:" + fontColor(currentBackgroundColor) + ";'>"  +  currentBackgroundColor + "</span></li>"); 
     } 
      
 }); 

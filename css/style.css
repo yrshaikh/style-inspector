@@ -1,30 +1,33 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway|Titillium+Web');
 
-.label {font-family: 'Raleway', 'Arial';text-transform: uppercase;color: #ccc;}
-.big-label {font-size:12px;}
-.small-label{font-size:10px;}
+.wfit-label {font-family: 'Raleway', 'Arial';text-transform: uppercase;color: #ccc;}
+.wfit-big-label {font-size:12px;}
+.wfit-small-label{font-size:10px;}
+.wfit-font14{font-size: 14px;}
 .width50percent {width: 50%;float: left;}
 .paddingtop10 {padding-top: 10px;}
 .yellow {color:#999;}
 .row {clear:both;}
 *, *::after, *::before{box-sizing: content-box !important;font-family: 'Titillium web', 'Raleway', 'Arial';}
-.wrap1 {font-family: 'Titillium web', 'Raleway', 'Arial';}
-.wrap1 {width: 280px;height: 100%;position: fixed;right: 0px;z-index: 999999999999;overflow-y: scroll;}
-.wrap1 {padding: 0px;background: #22232C;}
+.wfit-wrap1 {font-family: 'Titillium web', 'Raleway', 'Arial';}
+.wfit-wrap1 {width: 280px;height: 100%;position: fixed;right: 0px;z-index: 999999999999;overflow-y: scroll;}
+.wfit-wrap1 {padding: 0px;background: #22232C;}
 
-.head {width: 100%;position: relative;padding: 10px 12px;background: #4CBC6B;}
-.head .logo, .head .title, {float: left;}
-.head .logo {width: 20%;}
-.head .title {width: 80%;text-align: left;color:#fff;position: absolute;font-size: 16px;top: 11px;margin-left: 10px;}
-.head .logo img {width: 30px}
-.head .close {position: absolute;color: #eee;font-size: 15px;text-transform: lowercase;top: 10px;right: 50px;}
+.wfit-head {width: 100%;height:30px;position: relative;padding: 10px 12px;background: #4CBC6B;}
+.wfit-head .wfit-logo, .wfit-head .wfit-title, {float: left;}
+.wfit-head .wfit-logo {width: 20%;}
+.wfit-head .wfit-title {width: 80%;text-align: left;color:#fff;position: absolute;font-size: 16px;top: 11px;}
+.wfit-head .wfit-logo img {width: 30px}
+.wfit-head .wfit-close {position: absolute;color: #eee;font-size: 15px;text-transform: lowercase;top: 15px;right: 50px;}
 
-.main {padding: 10px 12px;color: #eef}
-.main .box {background: #1C1D27; padding: 20px 15px;border: 1px solid #111;min-height: 110px;}
-.main .colorbox, .main .wfit-boxes {display: block;margin-top: 5px;border-radius: 4px;width: 70%;text-align: center;}
-.main .colorbox, .main .wfit-boxes{letter-spacing: 0.2em;text-transform: lowercase;font-size: 12px;padding: 5px 10px;}
+.wfit-main {padding: 10px 12px;color: #eef}
+.wfit-main .box {background: #1C1D27; padding: 20px 15px;border: 1px solid #111;min-height: 110px;}
+.wfit-main .colorbox, .wfit-main .wfit-boxes {display: block;margin-top: 5px;border-radius: 4px;width: 70%;text-align: center;}
+.wfit-main .colorbox, .wfit-main .wfit-boxes{letter-spacing: 0.2em;text-transform: lowercase;font-size: 12px;padding: 5px 10px;}
 
-.main #wfit-color-history ul li, .main #wfit-background-history ul li {float: left;margin-bottom: 5px; width: 45%;}
+.wfit-main #wfit-color-history ul li, .wfit-main #wfit-background-history ul li {float: left;margin-bottom: 5px; width: 45%;}
+.wfit-main #wfit-color-history, .wfit-main #wfit-background-history {height: 155px;overflow-y: scroll}
+.wfit-ul li {font-size: 14px;}
 
 .footer {margin-top: 10px;}
 .footer .wfit-credits {font-family: 'Raleway';font-size: 11px;width: 100%;display: block;padding: 5px 5px;color: #aaa;}
