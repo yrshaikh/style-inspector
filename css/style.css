@@ -1,43 +1,31 @@
-.wfit-container, .wfit-end-btn, .wfit-header, .wfit-history { font-family: Tahoma, Helvetica, Arial, 'Trebuchet MS'; } 
-.wfit-container, .wfit-end-btn {font-size: 16px;} 
-.wfit-container {width: 300px;} 
-.wfit-container, .wfit-history { opacity: 0.95;z-index:999;position: fixed;-webkit-transition: left 0.5s;transition: left 0.5s; padding:10px; color:#111;} 
-.wfit-container, .wfit-history { background: #fff;box-shadow: 0 2px 6px rgba(0,0,0,0.3),0 4px 15px -5px rgba(0,0,0,0.0); text-align: center;border:2px solid #212121;} 
-.wfit-container:hover, .wfit-history:hover {opacity: 1;} 
-.wfit-container{right:0px;top: 0px; bottom: 0px;} 
-.wfit-history {left:5px;top: 50px;height: 85%; overflow: scroll;text-align: left;font-size: 14px;} 
-.wfit-container .wfit-box {background-color: #1B1C26; min-height: 150px; padding: 15px; margin-bottom: 15px;} 
- 
-.wfit-title{text-transform: uppercase; text-align: left; padding-left: 10px; color: #6F6F90;}
-.wfit-half{width: 49%; float: left; color: #dedede;}
-.wfit-header {font-size: 22px;} 
-.wfit-left-tab-header1 {font-size:22px;text-align: center;} 
-.wfit-left-tab-header2 {font-size:15px;font-weight: bold;padding-top: 10px;width:100%;float: left;} 
-.wfit-header, .wfit-logo {width:inherit;float: left;text-align: center;} 
-.wfit-logo img {width: 35px;} 
-.wfit-header-row {padding-bottom: 20px;} 
-.wfit-row {padding-top: 13px;text-align: left;font-size: 14px;clear:both;} 
-.wfit-row .wfit-label {float: left; text-transform: uppercase;} 
-.wfit-row.wfit-color .wfit-label {text-align: center;} 
-.wfit-row .wfit-label.wfit-half {color: #6F6F90;} 
-.wfit-btn-row {padding-top: 40px;padding-bottom: 10px;} 
- 
-.wfit-end-btn { background: #212121;color:#fff;cursor: pointer;} 
-.wfit-end-btn {padding: .3em .6em;box-shadow: 0 2px 1px rgba(0,0,0,0.3),0 1px 0 rgba(255,255,255,0.4) inset;background-color: #333;color: #fff !important;border: 1px solid #000 !important;border-radius: 3px;text-decoration: none;} 
-.wfit-end-btn:hover {border:2px solid #999;} 
- 
-.wfit-boxes {padding-top: 0.8px;padding-bottom: 0.8px;padding-left: 10px;padding-right: 10px;border-width: 1px;border-style: solid;border-color: rgba(0,0,0,.2);margin-right: 5px;background-color: #fff;} 
- 
-.wfit-container .wfit-row-scroll {max-height: 90px; overflow-y: scroll;}
-.wfit-container .wfit-row-scroll ul {padding-left: 0px;}
-.wfit-container .wfit-row-scroll ul li {width: 50%; float: left;}
-.wfit-credits {font-size: 12px;} 
- 
-.wfit-ul {list-style: none;margin-left: 0px;} 
-#wfit-font-history ul {padding-left: 0px; max-height: 90px; overflow-y: scroll;}
-#wfit-font-history ul li {text-align: left; padding-left: 10px; color: #dedede;}
-#wfit-color-history ul li, #wfit-background-history ul li {margin-bottom: 15px;}
-#wfit-color-history ul li span, #wfit-background-history ul li span{text-align: center;}
-#wfit-color-history ul li span:hover, #wfit-background-history ul li span:hover {cursor: pointer;}
-.wfit-box hr {margin-top: 25px; margin-left: -15px; margin-right: -15px;}
-.wfit-boxes{width: 80px; display: block;}
+@import url('https://fonts.googleapis.com/css?family=Raleway|Titillium+Web');
+
+.label {font-family: 'Raleway', 'Arial';text-transform: uppercase;color: #ccc;}
+.big-label {font-size:12px;}
+.small-label{font-size:10px;}
+.width50percent {width: 50%;float: left;}
+.paddingtop10 {padding-top: 10px;}
+.yellow {color:#999;}
+.row {clear:both;}
+
+.wrap1 {font-family: 'Titillium web', 'Raleway', 'Arial';}
+.wrap1 {width: 280px;height: 100%;position: fixed;right: 0px;z-index: 999999999999;overflow-y: scroll;}
+.wrap1 {padding: 0px;background: #22232C;}
+
+.head {width: 100%;position: relative;padding: 10px 12px;background: #4CBC6B;}
+.head .logo, .head .title, {float: left;}
+.head .logo {width: 20%;}
+.head .title {width: 80%;text-align: left;color:#fff;position: absolute;font-size: 16px;top: 11px;margin-left: 10px;}
+.head .logo img {width: 30px}
+.head .close {position: absolute;color: #eee;font-size: 15px;text-transform: lowercase;top: 10px;right: 50px;}
+
+.main {padding: 10px 12px;color: #eef}
+.main .box {background: #1C1D27; padding: 20px 15px;border: 1px solid #111;min-height: 110px;}
+.main .colorbox, .main .wfit-boxes {display: block;margin-top: 5px;border-radius: 4px;width: 70%;text-align: center;}
+.main .colorbox, .main .wfit-boxes{letter-spacing: 0.2em;text-transform: lowercase;font-size: 12px;padding: 5px 10px;}
+
+.main #wfit-color-history ul li, .main #wfit-background-history ul li {float: left;margin-bottom: 5px; width: 45%;}
+
+.footer {margin-top: 10px;}
+.footer .wfit-credits {font-family: 'Raleway';font-size: 11px;width: 100%;display: block;padding: 5px 5px;color: #aaa;}
+.footer .wfit-credits a{color: #fff;}
