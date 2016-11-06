@@ -4,7 +4,7 @@
 .wfit-container, .wfit-history { opacity: 0.95;z-index:999;position: fixed;-webkit-transition: left 0.5s;transition: left 0.5s; padding:10px; color:#111;} 
 .wfit-container, .wfit-history { background: #fff;box-shadow: 0 2px 6px rgba(0,0,0,0.3),0 4px 15px -5px rgba(0,0,0,0.0); text-align: center;border:2px solid #212121;} 
 .wfit-container:hover, .wfit-history:hover {opacity: 1;} 
-.wfit-container{right:5px;top: 0px; bottom: 0px;} 
+.wfit-container{right:0px;top: 0px; bottom: 0px;} 
 .wfit-history {left:5px;top: 50px;height: 85%; overflow: scroll;text-align: left;font-size: 14px;} 
 .wfit-container .wfit-box {background-color: #1B1C26; min-height: 150px; padding: 15px; margin-bottom: 15px;} 
  
@@ -37,5 +37,7 @@
 #wfit-font-history ul {padding-left: 0px; max-height: 90px; overflow-y: scroll;}
 #wfit-font-history ul li {text-align: left; padding-left: 10px; color: #dedede;}
 #wfit-color-history ul li, #wfit-background-history ul li {margin-bottom: 15px;}
+#wfit-color-history ul li span, #wfit-background-history ul li span{text-align: center;}
+#wfit-color-history ul li span:hover, #wfit-background-history ul li span:hover {cursor: pointer;}
 .wfit-box hr {margin-top: 25px; margin-left: -15px; margin-right: -15px;}
 .wfit-boxes{width: 80px; display: block;}

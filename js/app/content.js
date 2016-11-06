@@ -1,4 +1,3 @@
-console.log("yes"); 
 $("body").prepend("\
   <div class='wfit-container'>\
     <div class='wfit-wrapper'>\
@@ -62,22 +61,7 @@ $("body").prepend("\
   "); 
  
 var url = chrome.extension.getURL('icons/logo.png'); 
-console.log(url); 
 $(".wfit-logo img").attr("src", url); 
- /*
-$("body").prepend("\
-  <div class='wfit-history'>\
-    <span class='wfit-left-tab-header1'>Page History</span>\
-    <div id='wfit-color-history'>\
-      <span class='wfit-left-tab-header2'>Font colors on this page:</span>\
-      <ul class='wfit-ul'></ul>\
-    </div>\
-    <div id='wfit-background-history'>\
-      <span class='wfit-left-tab-header2'>Background colors on this page:</span>\
-      <ul class='wfit-ul'></ul>\
-    </div>\
-  </div>\
-  "); */
  
 var fontHistory = []; 
 var fontcolorHistory = []; 
@@ -86,14 +70,41 @@ var backgroundcolorHistory = [];
 $(".wfit-end-btn").click(function(){ 
   $(".wfit-container").remove(); 
   $(".wfit-history").remove(); 
+});
+
+$("#wfit-color-history ul, #wfit-background-history ul").on("click", "li span", function(e){
+  copyToClipboard($(this));
+  $(this).text("COPIED");
 }); 
+
+function copyToClipboard(element) {
+    var $temp = $("<input>");
+    $("body").append($temp);
+    $temp.val(rgbToHex($(element).css( "background-color" ))).select();
+    document.execCommand("copy");
+    $temp.remove();
+}
+
+
+$("#wfit-color-history ul, #wfit-background-history ul").on("mouseover", "li span", function(e){
+  var $this = $(this);
+  $this.data('initialText', $this.text());
+  $this.text("COPY");
+}); 
+
+
+$("#wfit-color-history ul, #wfit-background-history ul").on("mouseout", "li span", function(e){
+  var $this = $(this);
+  $this.text($this.data('initialText'));
+}); 
+
  
 $('*').hover(function(e) { 
     hoverElem = $(this); 
     var fonts = hoverElem.css("font-family"); 
     var currentFont = fonts.split(/,\s*/)[0]; 
      
-    // right tab 
+    // top tab 
     $("#font-family-holder").html(currentFont); 
     $("#font-size-holder").html(hoverElem.css("font-size")); 
      
@@ -109,7 +120,7 @@ $('*').hover(function(e) {
     $("#background-color-holder").css("color", fontColor(currentBackgroundColor)); 
     $(".wfit-background-color-box").css("background-color", currentBackgroundColor); 
  
-    // left tab 
+    // bottom tab 
     if(fontHistory.indexOf(currentFont) == -1){ 
       fontHistory.push(currentFont); 
       $(".wfit-wrapper").find('#wfit-font-history ul').append("<li>" + currentFont + "</li>"); 
@@ -142,9 +153,5 @@ function rgbToHex(input){
 }
 
 function fontColor(hexColor){
-  console.log(hexColor);
-  console.log(hexColor.substring(1,2) < '7');
-  if(hexColor.substring(1,2) < '7')
-    return 'white';
-  return 'black';
+  return hexColor.substring(1,2) < '7' ? 'white' : 'black';
 }
