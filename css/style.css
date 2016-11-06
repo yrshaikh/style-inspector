@@ -7,7 +7,7 @@
 .paddingtop10 {padding-top: 10px;}
 .yellow {color:#999;}
 .row {clear:both;}
-
+*, *::after, *::before{box-sizing: content-box !important;font-family: 'Titillium web', 'Raleway', 'Arial';}
 .wrap1 {font-family: 'Titillium web', 'Raleway', 'Arial';}
 .wrap1 {width: 280px;height: 100%;position: fixed;right: 0px;z-index: 999999999999;overflow-y: scroll;}
 .wrap1 {padding: 0px;background: #22232C;}
@@ -28,4 +28,4 @@
 
 .footer {margin-top: 10px;}
 .footer .wfit-credits {font-family: 'Raleway';font-size: 11px;width: 100%;display: block;padding: 5px 5px;color: #aaa;}
-.footer .wfit-credits a{color: #fff;}
+.footer .wfit-credits a{font-family: 'Raleway';color: #fff;}

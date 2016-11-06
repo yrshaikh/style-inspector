@@ -36,7 +36,6 @@ $("body").prepend("\
 	            <span class='label small-label width50percent'>FONT COLORS</span>\
 	            <span class='label small-label width50percent'>BG COLORS</span>\
 	          </div>\
-	          <hr>\
 	          <div class='wfit-row wfit-row-scroll'>\
 	            <div id='wfit-color-history'>\
 	              <ul class='wfit-ul'></ul>\
@@ -51,7 +50,7 @@ $("body").prepend("\
 	        <div class='box paddingtop10 row'>\
 	          <div class='title label big-label'>Fonts on this page</div>\
 	          <div id='wfit-font-history' class='wfit-row-scroll'>\
-	            <ul class='wfit-ul'></ul>\
+	            <ul class='wfit-ul yellow'></ul>\
 	          </div>\
 	        </div>\
 	        <div class='footer'>\
