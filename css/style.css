@@ -4,14 +4,15 @@
 .wfit-big-label {font-size:18px;}
 .wfit-small-label{font-size:12px;font-weight: 800;}
 .wfit-font18{font-size: 18px;}
-.width50percent {width: 50%;float: left;}
+.width50percent {display: inline-flex;width: 45%;}
 .paddingtop10 {padding-top: 10px;}
+.paddingtop20 {padding-top: 20px;}
 .yellow {color:#B7B8BB;}
 .wfit-row {clear:both;}
-*, *::after, *::before{box-sizing: content-box !important;}
+/**, *::after, *::before{box-sizing: content-box !important;}*/
 
 .wfit-wrap1 {font-family: 'Titillium web', 'Raleway', 'Arial';}
-.wfit-wrap1 {width: 350px;height: 100%;position: fixed;right: 0px;z-index: 999999999999;overflow-y: scroll;}
+.wfit-wrap1 {width: 300px;height: 100%;position: fixed;right: 0px;z-index: 999999999999;overflow-y: scroll;}
 .wfit-wrap1 {padding: 0px;background: #22232C;}
 
 .wfit-head {width: 100%;height:30px;position: relative;padding: 10px 12px;background: #4CBC6B;}
@@ -22,9 +23,9 @@
 .wfit-head .wfit-close {position: absolute;color: #eee;font-size: 15px;text-transform: lowercase;top: 15px;right: 50px;}
 
 .wfit-main {padding: 10px 12px;color: #eef}
-.wfit-main .box {background: #1C1D27; padding: 20px 15px;border: 1px solid #111;min-height: 125px;margin-bottom: 25px;margin-top: 10px;margin-left: 7px;margin-right: 7px;}
-.wfit-main .colorbox, .wfit-main .wfit-boxes {display: block;margin-top: 5px;border-radius: 4px;width: 70%;text-align: center;}
-.wfit-main .colorbox, .wfit-main .wfit-boxes{letter-spacing: 0.2em;text-transform: uppercase;font-size: 11px;padding: 5px 10px;}
+.wfit-main .box {background: #1C1D27; padding: 20px 15px;border: 2px solid #20212A;min-height: 125px;margin-bottom: 25px;margin-top: 10px;margin-left: 7px;margin-right: 7px;}
+.wfit-main .colorbox, .wfit-main .wfit-boxes {display: block;margin-top: 10px;margin-bottom:4px;border-radius: 4px;width: 70%;text-align: center;}
+.wfit-main .colorbox, .wfit-main .wfit-boxes{letter-spacing: 0.2em;text-transform: uppercase;font-size: 11px;padding: 8px;}
 
 .wfit-main #wfit-color-history .wfit-li, .wfit-main #wfit-background-history .wfit-li {float: left;margin-bottom: 5px; width: 40%;margin-right: 10px;font-size: 12px;}
 .wfit-main #wfit-color-history, .wfit-main #wfit-background-history {height: 155px;overflow-y: scroll}

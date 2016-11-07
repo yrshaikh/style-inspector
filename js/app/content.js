@@ -15,7 +15,7 @@ $("body").prepend("\
 	            <span id='font-family-holder' class='width50percent wfit-font18 yellow'>Arial</span>\
 	            <span id='font-size-holder' class='width50percent wfit-font18 yellow'>14px</span>\
 	          </div>\
-	          <div class='wfit-row paddingtop10'>\
+	          <div class='wfit-row paddingtop20'>\
 	            <span class='wfit-label wfit-small-label width50percent'>Color</span>\
 	            <span class='wfit-label wfit-small-label width50percent'>Background</span>\
 	            <span class='width50percent'>\
