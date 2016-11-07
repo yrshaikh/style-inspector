@@ -9,13 +9,13 @@ $("body").prepend("\
         <div class='wfit-main'>\
 	        <div class='box'>\
 	          <div class='wfit-label wfit-big-label'>Live Inspector</div>\
-	          <div class='row paddingtop10'>\
+	          <div class='wfit-row paddingtop10'>\
 	            <span class='wfit-label wfit-small-label width50percent'>Family</span>\
 	            <span class='wfit-label wfit-small-label width50percent'>Size</span>\
-	            <span class='width50percent wfit-font14 yellow'>Arial</span>\
-	            <span class='width50percent wfit-font14 yellow'>14px</span>\
+	            <span id='font-family-holder' class='width50percent wfit-font18 yellow'>Arial</span>\
+	            <span id='font-size-holder' class='width50percent wfit-font18 yellow'>14px</span>\
 	          </div>\
-	          <div class='row paddingtop10'>\
+	          <div class='wfit-row paddingtop10'>\
 	            <span class='wfit-label wfit-small-label width50percent'>Color</span>\
 	            <span class='wfit-label wfit-small-label width50percent'>Background</span>\
 	            <span class='width50percent'>\
@@ -24,33 +24,33 @@ $("body").prepend("\
 	              </span>\
 	            </span>\
 	            <span class='width50percent'>\
-	              <span class='colorbox wfit-boxes'>\
+	              <span id='background-color-box' class='colorbox wfit-boxes'>\
 	                <span id='background-color-holder'>#</span>\
 	              </span>\
 	            </span>\
 	          </div>\
 	        </div>\
-	        <div class='box row'>\
+	        <div class='box wfit-row'>\
 	          <div class='wfit-label wfit-big-label'>Colors on this page</div>\
-	          <div class='wfit-row wfit-color'>\
+	          <div class='wfit-row wfit-color paddingtop10'>\
 	            <span class='wfit-label wfit-small-label width50percent'>FONT COLORS</span>\
 	            <span class='wfit-label wfit-small-label width50percent'>BG COLORS</span>\
 	          </div>\
 	          <div class='wfit-row wfit-row-scroll'>\
 	            <div id='wfit-color-history'>\
-	              <ul class='wfit-ul'></ul>\
+	              <div class='wfit-ul'></div>\
 	            </div>\
 	          </div>\
 	          <div class='wfit-row wfit-row-scroll'>\
 	            <div id='wfit-background-history'>\
-	              <ul class='wfit-ul'></ul>\
+	              <div class='wfit-ul'></div>\
 	            </div>\
 	          </div>\
 	        </div>\
 	        <div class='box paddingtop10 row'>\
 	          <div class='title wfit-label wfit-big-label'>Fonts on this page</div>\
 	          <div id='wfit-font-history' class='wfit-row-scroll paddingtop10'>\
-	            <ul class='wfit-ul yellow wfit-font14'></ul>\
+	            <div class='wfit-ul yellow wfit-font18'></div>\
 	          </div>\
 	        </div>\
 	        <div class='footer'>\
@@ -76,7 +76,7 @@ $(".wfit-close").click(function(){
   $(".wfit-history").remove(); 
 });
 
-$("#wfit-color-history ul, #wfit-background-history ul").on("click", "li span", function(e){
+$("#wfit-color-history div, #wfit-background-history div").on("click", ".wfit-li span", function(e){
   copyToClipboard($(this));
   $(this).text("COPIED");
 }); 
@@ -90,14 +90,14 @@ function copyToClipboard(element) {
 }
 
 
-$("#wfit-color-history ul, #wfit-background-history ul").on("mouseover", "li span", function(e){
+$("#wfit-color-history div, #wfit-background-history div").on("mouseover", ".wfit-li span", function(e){
   var $this = $(this);
   $this.data('initialText', $this.text());
   $this.text("COPY");
 }); 
 
 
-$("#wfit-color-history ul, #wfit-background-history ul").on("mouseout", "li span", function(e){
+$("#wfit-color-history div, #wfit-background-history div").on("mouseout", ".wfit-li span", function(e){
   var $this = $(this);
   $this.text($this.data('initialText'));
 }); 
@@ -122,22 +122,22 @@ $('*').hover(function(e) {
     currentBackgroundColor = rgbToHex(currentBackgroundColor); 
     $("#background-color-holder").html(currentBackgroundColor); 
     $("#background-color-holder").css("color", fontColor(currentBackgroundColor)); 
-    $(".wfit-background-color-box").css("background-color", currentBackgroundColor); 
+    $("#background-color-box").css("background-color", currentBackgroundColor); 
  
     // bottom tab 
     if(fontHistory.indexOf(currentFont) == -1){ 
       fontHistory.push(currentFont); 
-      $(".wfit-wrap2").find('#wfit-font-history ul').append("<li>" + currentFont + "</li>"); 
+      $(".wfit-wrap2").find('#wfit-font-history div').append("<span class='wfit-li'>" + currentFont + "</span>"); 
     } 
  
     if(fontcolorHistory.indexOf(currentFontColor) == -1){ 
       fontcolorHistory.push(currentFontColor); 
-      $(".wfit-wrap2").find('#wfit-color-history ul').append("<li>" + "<span class='wfit-boxes' style='background-color:"  + currentFontColor + "; color:" + fontColor(currentFontColor) + ";'>" + currentFontColor + "</span></li>"); 
+      $(".wfit-wrap2").find('#wfit-color-history div').append("<span class='wfit-li'>" + "<span class='wfit-boxes' style='background-color:"  + currentFontColor + "; color:" + fontColor(currentFontColor) + ";'>" + currentFontColor + "</span></span>"); 
     } 
  
     if(backgroundcolorHistory.indexOf(currentBackgroundColor) == -1){ 
       backgroundcolorHistory.push(currentBackgroundColor); 
-      $(".wfit-wrap2").find('#wfit-background-history ul').append("<li>" + "<span class='wfit-boxes' style='background-color:"  + currentBackgroundColor + "; color:" + fontColor(currentBackgroundColor) + ";'>"  +  currentBackgroundColor + "</span></li>"); 
+      $(".wfit-wrap2").find('#wfit-background-history div').append("<span class='wfit-li'>" + "<span class='wfit-boxes' style='background-color:"  + currentBackgroundColor + "; color:" + fontColor(currentBackgroundColor) + ";'>"  +  currentBackgroundColor + "</span></span>"); 
     } 
      
 }); 
