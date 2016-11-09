@@ -53,7 +53,7 @@ $("body").prepend("\
 	            <div class='wfit-ul yellow wfit-font18'></div>\
 	          </div>\
 	        </div>\
-	        <div class='footer'>\
+	        <div class='wfit-footer'>\
 	          <span class='wfit-credits'>Designed by <a href='#' target='_blank'>Omar Faizan</a></span>\
 	          <span class='wfit-credits'>Developed by <a href='#' target='_blank'>Ali Rizvi & Yasser Shaikh</a></span>\
 	        </div>\
@@ -62,7 +62,7 @@ $("body").prepend("\
   </div>\
   "); 
 
-$('head').append('<link href="https://fonts.googleapis.com/css?family=Raleway|Titillium+Web" rel="stylesheet">')
+$('head').append('<link href="https://fonts.googleapis.com/css?family=Raleway:400,600,700|Titillium+Web" rel="stylesheet">')
 
 var url = chrome.extension.getURL('icons/logo.png'); 
 $(".wfit-logo img").attr("src", url); 
