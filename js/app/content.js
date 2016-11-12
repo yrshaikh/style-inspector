@@ -1,7 +1,15 @@
 setTimeout(function(){
-  $("#wfit-color-history").mCustomScrollbar();
-  $("#bg-color-box").mCustomScrollbar();
+  //$("#wfit-color-history").mCustomScrollbar();
+  //$("#bg-color-box").mCustomScrollbar();
 }, 300);
+
+var firstScrollAttached = false;
+function attachFirstScroll() {
+  if(!firstScrollAttached)  {
+    firstScrollAttached = true;
+    //$("#wfit-color-history").mCustomScrollbar();
+  }
+}
 
 $("body").prepend("\
   <div class='wfit-wrap1'>\
@@ -115,6 +123,7 @@ $('*').hover(function(e) {
     var fonts = hoverElem.css("font-family"); 
     var currentFont = fonts.split(/,\s*/)[0]; 
      
+    attachFirstScroll();
     // top tab 
     $("#font-family-holder").html(currentFont); 
     $("#font-size-holder").html(hoverElem.css("font-size")); 
