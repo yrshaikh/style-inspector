@@ -7,7 +7,9 @@ var firstScrollAttached = false;
 function attachFirstScroll() {
   if(!firstScrollAttached)  {
     firstScrollAttached = true;
-    //$("#wfit-color-history").mCustomScrollbar();
+    setTimeout(function(){
+      $("#font-color-box").mCustomScrollbar();
+    }, 300)
   }
 }
 
@@ -53,12 +55,10 @@ $("body").prepend("\
 	          </div>\
 	          <div id='font-color-box' class='wfit-row wfit-row-scroll'>\
 	            <div id='wfit-color-history' class=''>\
-	              <div class='wfit-ul'></div>\
 	            </div>\
 	          </div>\
 	          <div id='bg-color-box' class='wfit-row wfit-row-scroll' style='display:none;'>\
 	            <div id='wfit-background-history' class=''>\
-	              <div class='wfit-ul'></div>\
 	            </div>\
 	          </div>\
 	        </div>\
@@ -117,9 +117,30 @@ $("#wfit-color-history div, #wfit-background-history div").on("mouseout", ".wfit
   $this.text($this.data('initialText'));
 }); 
 
+$.fn.descendantOf = function(element) {
+    element = $(element)[0];
+    var current = this;
+    var body    = document.body;
+    while (current && current != element && current != document.body) {
+        current = $(current).parent()[0];
+    }
+    if (typeof(current) == "undefined" || typeof(current) == "null") {
+        return false;
+    } else if (current == element) {
+        return true;
+    } else if (current == document.body) {
+        return false;
+    }
+}
  
 $('*').hover(function(e) { 
+
+    var target = $(e.target);
     hoverElem = $(this); 
+    if ($(target).descendantOf(".wfit-wrap1")) {
+      return;
+    }
+  
     var fonts = hoverElem.css("font-family"); 
     var currentFont = fonts.split(/,\s*/)[0]; 
      
@@ -148,12 +169,12 @@ $('*').hover(function(e) {
  
     if(fontcolorHistory.indexOf(currentFontColor) == -1){ 
       fontcolorHistory.push(currentFontColor); 
-      $(".wfit-wrap2").find('#wfit-color-history div').append("<span class='wfit-li'>" + "<span class='wfit-boxes' style='background-color:"  + currentFontColor + "; color:" + fontColor(currentFontColor) + ";'>" + currentFontColor + "</span></span>"); 
+      $(".wfit-wrap2").find('#wfit-color-history').append("<div class='wfit-li wfit-boxes' style='background-color:"  + currentFontColor + "; color:" + fontColor(currentFontColor) + ";'>" + currentFontColor + "</div>"); 
     } 
  
     if(backgroundcolorHistory.indexOf(currentBackgroundColor) == -1){ 
       backgroundcolorHistory.push(currentBackgroundColor); 
-      $(".wfit-wrap2").find('#wfit-background-history div').append("<span class='wfit-li'>" + "<span class='wfit-boxes' style='background-color:"  + currentBackgroundColor + "; color:" + fontColor(currentBackgroundColor) + ";'>"  +  currentBackgroundColor + "</span></span>"); 
+      $(".wfit-wrap2").find('#wfit-background-history').append("<div class='wfit-li wfit-boxes' style='background-color:"  + currentBackgroundColor + "; color:" + fontColor(currentBackgroundColor) + ";'>"  +  currentBackgroundColor + "</div>"); 
     } 
      
 }); 
@@ -171,7 +192,7 @@ $('#font-color').click(function(){
   $('#bg-color').removeClass('wfit-active');
   $('#font-color-box').show();
   $('#font-color').addClass('wfit-active');
-  $("#wfit-color-history").mCustomScrollbar();  
+  $("#font-color-box").mCustomScrollbar();  
 });
  
 function rgbToHex(input){ 
