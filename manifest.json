@@ -12,9 +12,9 @@
    "name": "Style Inspector",
    "content_scripts": [
     {
-      "css": [ "css/style.css" ],
+      "css": [ "css/style.css", "css/jquery.mCustomScrollbar.css" ],
       "matches": [ "\u003Call_urls>" ],
-      "js": [ "js/lib/jquery.min.js" ]
+      "js": [ "js/lib/jquery.min.js", "js/lib/jquery.mCustomScrollbar.concat.min.js" ]
     }
   ],
    "icons": { 
@@ -23,5 +23,5 @@
    "permissions": [ "tabs", "http://*/*", "https://*/*", "http://localhost.com/" ],
    "update_url": "https://clients2.google.com/service/update2/crx",
    "version": "1.0",
-   "web_accessible_resources": [ "css/style.css", "icons/logo.png" ]  
+   "web_accessible_resources": [ "css/style.css", "css/jquery.mCustomScrollbar.css", "icons/logo.png" ]  
 }
