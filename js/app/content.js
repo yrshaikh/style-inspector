@@ -1,3 +1,8 @@
+setTimeout(function(){
+  $("#wfit-color-history").mCustomScrollbar();
+  $("#bg-color-box").mCustomScrollbar();
+}, 300);
+
 $("body").prepend("\
   <div class='wfit-wrap1'>\
     <div class='wfit-wrap2'>\
@@ -39,12 +44,12 @@ $("body").prepend("\
 	            <span id='bg-color' class='wfit-label wfit-small-label width50percent'>BG COLORS</span>\
 	          </div>\
 	          <div id='font-color-box' class='wfit-row wfit-row-scroll'>\
-	            <div id='wfit-color-history' class='mCustomScrollbar'>\
+	            <div id='wfit-color-history' class=''>\
 	              <div class='wfit-ul'></div>\
 	            </div>\
 	          </div>\
 	          <div id='bg-color-box' class='wfit-row wfit-row-scroll' style='display:none;'>\
-	            <div id='wfit-background-history' class='mCustomScrollbar'>\
+	            <div id='wfit-background-history' class=''>\
 	              <div class='wfit-ul'></div>\
 	            </div>\
 	          </div>\
@@ -149,6 +154,7 @@ $('#bg-color').click(function(){
   $('#font-color').removeClass('wfit-active');
   $('#bg-color-box').show();
   $('#bg-color').addClass('wfit-active');
+  $("#bg-color-box").mCustomScrollbar();
 });
 
 $('#font-color').click(function(){
@@ -156,6 +162,7 @@ $('#font-color').click(function(){
   $('#bg-color').removeClass('wfit-active');
   $('#font-color-box').show();
   $('#font-color').addClass('wfit-active');
+  $("#wfit-color-history").mCustomScrollbar();  
 });
  
 function rgbToHex(input){ 
