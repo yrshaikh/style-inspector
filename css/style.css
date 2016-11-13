@@ -10,17 +10,19 @@
 .yellow {color:#B7B8BB;}
 .wfit-row {clear:both;}
 /**, *::after, *::before{box-sizing: content-box !important;}*/
+.wfit-wrap1 .mCSB_container {margin-right: 0px !important;}
 
-.wfit-wrap1 {font-family: 'Titillium web', 'Raleway', 'Arial';}
-.wfit-wrap1 {width: 300px;height: 100%;position: fixed;right: 0px;z-index: 999999999999;overflow-y: scroll;}
+.wfit-wrap1 {font-family: 'Titillium web', 'Raleway', 'Arial';box-sizing: content-box;}
+.wfit-wrap1 {width: 300px;height: 100%;position: fixed;right: 0px;z-index: 999999999999;}
 .wfit-wrap1 {padding: 0px;background: #22232C;}
 
 .wfit-head {width: 100%;height:30px;position: relative;padding: 10px 12px;background: #4CBC6B;}
 .wfit-head .wfit-logo, .wfit-head .wfit-title, {float: left;}
 .wfit-head .wfit-logo {width: 20%;}
-.wfit-head .wfit-title {width: 80%;text-align: left;color:#fff;position: absolute;font-size: 16px;top: 15px;}
+.wfit-head .wfit-title {width: 80%;text-align: left;color:#fff;position: absolute;font-size: 18px;top: 11px;left: 55px;font-weight: 600;
+letter-spacing: 1px;}
 .wfit-head .wfit-logo img {width: 30px}
-.wfit-head .wfit-close {position: absolute;color: #eee;font-size: 15px;text-transform: lowercase;top: 15px;right: 50px;}
+.wfit-head .wfit-close {position: absolute;color: #eee;font-size: 15px;text-transform: lowercase;top: 11px;right: 50px;cursor: pointer;}
 
 .wfit-main {padding: 10px 12px;color: #eef}
 .wfit-main .box {background: #1C1D27; padding: 20px 15px;border: 2px solid #20212A;min-height: 200px;margin-bottom: 25px;margin-top: 10px;margin-left: 7px;margin-right: 7px;}
@@ -38,5 +40,7 @@
 .wfit-family {min-height: 85px;}
 .wfit-active {color: #FFFFFF;}
 .wfit-color .wfit-small-label {cursor: pointer;}
+#font-color-box .mCSB_scrollTools, #bg-color-box .mCSB_scrollTools{width: 5px;}
+
 
 span.wfit-boxes {width: 95%;display: block;}
