@@ -9,18 +9,19 @@ function attachFirstScroll() {
     firstScrollAttached = true;
     $(".wfit-no-sel").hide();
     $(".wfit-family-sel").show();
+    $('.wfit-main').css("height", window.innerHeight-90); 
     setTimeout(function(){
       $("#font-color-box").mCustomScrollbar();
       $("#bg-color-box").mCustomScrollbar();
-      $('.wfit-wrap1').mCustomScrollbar();
+      $('.wfit-main').mCustomScrollbar();
     }, 300)
   }
 }
 
-$("body").prepend("\
-  <div class='wfit-wrap1'>\
+$("html").prepend("\
+  <div class='wfit-wrap1 wfit-wrap1--right'>\
     <div class='wfit-wrap2'>\
-        <div class='wfit-head'>\
+        <div class='wfit-head' style='box-sizing:content-box;'>\
           <span class='wfit-logo'><img src=''></span>\
             <span class='wfit-title'>Style Inspector</span>\
             <a class='wfit-close'>\
@@ -79,8 +80,8 @@ $("body").prepend("\
 	          </div>\
 	        </div>\
 	        <div class='wfit-footer'>\
-	          <span class='wfit-credits'>Designed by <a href='#' target='_blank'>Omar Faizan</a></span>\
-	          <span class='wfit-credits'>Developed by <a href='#' target='_blank'>Ali Rizvi & Yasser Shaikh</a></span>\
+	          <span class='wfit-credits'>Designed by <a href='//www.linkedin.com/in/omar-faizan-44253a41/' target='_blank'>Omar Faizan</a></span>\
+	          <span class='wfit-credits'>Developed by <a href='//www.linkedin.com/in/alirizvi2008/' target='_blank'>Ali Rizvi</a> & <a href='//www.linkedin.com/in/yrshaikh/' target='_blank'>Yasser Shaikh</a></span>\
 	        </div>\
         </div>\
       </div>\
